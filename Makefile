@@ -10,7 +10,7 @@ setup-hooks: ## Install pre-commit hooks
 	@echo "Pre-commit hooks installed!
 
 install: ## Install dependencies
-	uv sync --group dev
+	uv sync --all
 	uv run pre-commit install
 
 pre-commit: ## Run pre-commit on all files
