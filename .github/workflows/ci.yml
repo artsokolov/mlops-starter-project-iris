@@ -52,13 +52,13 @@ jobs:
         run: make install
 
       - name: Load data
-        run: python src/load_data.py
+        run: uv run src/load_data.py
 
       - name: Split dataset
-        run: python src/split_dataset.py --test_size 0.2
+        run: uv run src/split_dataset.py --test_size 0.2
 
       - name: Train model
-        run: python src/train.py
+        run: uv run src/train.py
 
       - uses: actions/upload-artifact@v4
         with:
@@ -96,7 +96,7 @@ jobs:
           fi
 
       - name: Evaluate model
-        run: python src/evaluate.py
+        run: uv run src/evaluate.py
 
       - uses: actions/upload-artifact@v4
         with:
